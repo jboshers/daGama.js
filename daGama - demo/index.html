@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>deGama Test page</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="LunchBox">
+  <meta name="description" content="A neat navigation plugin.">
+
+<link href='http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Mr+Dafoe' rel='stylesheet' type='text/css'>
+
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <h1>
+        daGama.js
+        <span>- A neat navigation plugin.</span>
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#intro">Introduction</a>
+          </li>
+          <li>
+            <a href="#setup">Setup</a>
+          </li>
+          <li>
+            <a href="#download">Download</a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+    <section id="intro">
+        <h1> What is daGama.js?</h1>
+        <img src="img/Vascodagama.jpeg">
+        <p>
+          DaGama.js is a neat navigation plugin for jQuery that allows you to make those sliding pages that is all the rage now.  Great for plugin documentation pages such as these, your portfolio, or even your grandmother's garden club's website. Currently, it only supports vertical scrolling. Horizontal scrolling will be along very shortly.
+        </p>
+    </section>
+    <section id="setup">
+          <img src="img/oldcompass.png">
+          <h1> Setting up daGama.js</h1>
+        <p>
+          DaGama.js starts out like any other jQuery plugin.
+        </p>
+          <pre>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</pre>
+          <p>
+          The Barebones Configuration
+        </p>
+<pre>
+  &lt;script&gt;
+    $(document).ready(function(){
+      $('nav').daGama({
+        menuHeight: 72
+      });
+    });
+  &lt;/script&gt;
+</pre>
+        <p>
+          The Hardcore Configuration
+        </p>
+<pre>
+  &lt;script&gt;
+    $(document).ready(function(){
+      $('nav').daGama({
+        items: "li > a",
+        speed: 1200,
+        menuHeight: 72,
+        easingFunction: function (x, t, b, c, d) {
+            return c*((t=t/d-1)*t*t + 1) + b;
+        }
+      });
+    });
+  &lt;/script&gt;
+</pre>
+      </section>
+      <section id="download">
+         <h1> Download daGama.js</h1>
+          <img src="img/gold.png">
+      <div>
+          <a class="btn" href="https://github.com/jboshers/daGama.js">Download daGama.js at Github</a>
+      </div>
+    </section>
+    <section id="colophon">
+     <img src="img/logo.png">Designed and Developed by Jeff Boshers
+     <div>
+      Licensed Under:
+      <a href="http://sam.zoy.org/wtfpl/">WTFPL</a>
+      <br>
+      <small>Keep my name in it for Karma?</small>
+    </div>
+    </section>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+  <script src="js/daGama.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('nav').daGama({
+      menuHeight: 59
+    });
+  });
+  </script>
+</body>
+</html>
